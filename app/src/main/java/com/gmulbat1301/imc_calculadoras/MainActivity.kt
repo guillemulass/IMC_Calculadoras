@@ -9,6 +9,14 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var btnList : ArrayList<Button>
 
+    private val btnSalir : Button = findViewById(R.id.Salir)
+    private val activityClasses = listOf(
+        CalculadoraGuille::class.java,
+        CalculadoraAlvaro::class.java,
+        CalculadoraIMC::class.java
+    )
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,31 +24,31 @@ class MainActivity : AppCompatActivity() {
 
         initComponents()
         initListeners()
-        
     }
 
     private fun initComponents(){
-        val btnSalir : Button = findViewById(R.id.Salir)
-
         btnList = ArrayList()
         btnList.add(findViewById(R.id.CalculadoraGuille))
         btnList.add(findViewById(R.id.CalculadoraAlvaro))
         btnList.add(findViewById(R.id.CalculadoraIMC))
-        btnList.add(findViewById(R.id.Salir))
     }
 
 
     private fun initListeners(){
         for (i in 0..<btnList.count()){
-            btnList[i].setOnClickListener{ btnClicked() }
+            btnList[i].setOnClickListener{ btnClicked(i) }
         }
+
+        btnSalir.setOnClickListener { System.exit(0) }
     }
 
 
     // terminar la funcion
-    private fun btnClicked(){
-            val accesoCalculadoraGuille : Intent = Intent(this, CalculadoraGuille::class.java)
-            startActivity(accesoCalculadoraGuille)
+    private fun btnClicked(i: Int) {
+        if (i >= 0 && i < activityClasses.size) {
+            val accesoCalculadora = Intent(this, activityClasses[i])
+            startActivity(accesoCalculadora)
+        }
     }
 }
 

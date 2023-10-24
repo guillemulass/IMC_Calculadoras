@@ -12,7 +12,7 @@
         android:id="@+id/CalculadoraIMC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/calculadora_guillermo"
+        android:text="@string/calculadoraimc"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,27 +25,32 @@
         android:text="@string/calculadora_guillermo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.183" />
 
     <Button
         android:id="@+id/CalculadoraAlvaro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/calculadora_guillermo"
+        android:text="@string/calculadoraalvaro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677" />
 
     <Button
         android:id="@+id/Salir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/calculadora_guillermo"
+        android:text="@string/salir"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.329" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
