@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var btnList : ArrayList<Button>
 
-    private val btnSalir : Button = findViewById(R.id.Salir)
+    lateinit var btnSalir : Button
     private val activityClasses = listOf(
         CalculadoraGuille::class.java,
         CalculadoraAlvaro::class.java,
@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initComponents(){
+        btnSalir = findViewById(R.id.Salir)
         btnList = ArrayList()
         btnList.add(findViewById(R.id.CalculadoraGuille))
         btnList.add(findViewById(R.id.CalculadoraAlvaro))
