@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.cardview.widget.CardView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import java.text.DecimalFormat
@@ -30,6 +31,7 @@ class CalculadoraIMC : AppCompatActivity() {
     lateinit var sexo : String
     lateinit var IMCaMostrar : String
     lateinit var btnSalir : Button
+
 
 
     private var textoPeso = 60
@@ -78,7 +80,10 @@ class CalculadoraIMC : AppCompatActivity() {
         btnAddEdad.setOnClickListener{ updatetxtEdad("+") }
         btnSubsEdad.setOnClickListener{ updatetxtEdad("-") }
 
-        btnMujer.setOnClickListener { sexo = "Mujer" }
+        btnMujer.setOnClickListener {
+            sexo = "Mujer"
+
+        }
         btnHombre.setOnClickListener { sexo = "Hombre" }
         btnSalir.setOnClickListener { finish() }
 

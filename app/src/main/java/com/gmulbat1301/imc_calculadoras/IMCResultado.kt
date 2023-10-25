@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class IMCResultado : AppCompatActivity() {
@@ -14,6 +15,10 @@ class IMCResultado : AppCompatActivity() {
     lateinit var textviewSexo: TextView
     lateinit var textviewExplicacion: TextView
     lateinit var btnSalir : Button
+
+    lateinit var imagen : ImageView
+
+
 
 
 
@@ -41,6 +46,7 @@ class IMCResultado : AppCompatActivity() {
         textviewSexo = findViewById(R.id.txtsexo)
         textviewExplicacion = findViewById(R.id.txtexplicacion)
         btnSalir = findViewById<Button?>(R.id.btn_SalirResultado)
+        imagen = findViewById(R.id.imagen)
     }
 
 
@@ -53,31 +59,37 @@ class IMCResultado : AppCompatActivity() {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene un bajo peso.
+               
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc1)
             }
             else if (variableIMC?.toFloat()!! > 20f && variableIMC?.toFloat()!! <= 24.9f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene un peso normal.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc2)
             }
             else if (variableIMC?.toFloat()!! > 25f && variableIMC?.toFloat()!! <= 29.9f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene una obesidad leve.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc3)
             }
             else if (variableIMC?.toFloat()!! > 30f && variableIMC?.toFloat()!! <= 40f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene una obesidad severa.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc4)
             }
             else if (variableIMC?.toFloat()!! > 40f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene una obesidad muy severa.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc5)
             }
         }
         if (variablesexo == "Mujer") {
@@ -86,30 +98,41 @@ class IMCResultado : AppCompatActivity() {
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene un bajo peso.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc1)
+
             }
             else if (variableIMC?.toFloat()!! > 20f && variableIMC?.toFloat()!! <= 23.9f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene un peso normal.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc2)
+
             }
             else if (variableIMC?.toFloat()!! > 24f && variableIMC?.toFloat()!! <= 28.9f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene una obesidad leve.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc3)
+
             }
             else if (variableIMC?.toFloat()!! > 29f && variableIMC?.toFloat()!! <= 37f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene una obesidad severa.
+                               
+
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc4)
             }
             else if (variableIMC?.toFloat()!! > 37f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
                 Usted tiene una obesidad muy severa.
             """.trimIndent()
+                imagen.setImageResource(R.drawable.imc5)
+
             }
         }
     }

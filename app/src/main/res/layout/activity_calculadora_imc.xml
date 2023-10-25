@@ -25,7 +25,7 @@
             android:id="@+id/btn_Hombre"
             android:layout_width="175dp"
             android:layout_height="175dp"
-            android:backgroundTint="#3A4750"
+            android:backgroundTint="@color/Teal"
             tools:ignore="SpeakableTextPresentCheck" />
         <LinearLayout
             android:layout_width="match_parent"

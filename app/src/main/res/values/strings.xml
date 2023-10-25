@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">IMC_Calculadoras</string>
     <string name="calculadora_guillermo">Calculadora Guillermo</string>
-    <string name="calculadoraimc">CalculadoraIMC</string>
-    <string name="calculadoraalvaro">CalculadoraAlvaro</string>
+    <string name="calculadoraimc">Calculadora de IMC</string>
+    <string name="calculadoraalvaro">Calculadora Álvaro</string>
     <string name="salir">Salir</string>
     <string name="hombres">Hombres</string>
     <string name="mujeres">Mujeres</string>
@@ -23,4 +23,6 @@
     <string name="pesomas">PESO +</string>
     <string name="edadmenos">EDAD -</string>
     <string name="edadmas">EDAD +</string>
+    <string name="textoInicioact4">Actividad 4 : Calculadora IMC</string>
+    <string name="hecho_por_lvaro_castilla_y_guillermo_mulas">Hecho por Álvaro Castilla y Guillermo Mulas</string>
 </resources>
