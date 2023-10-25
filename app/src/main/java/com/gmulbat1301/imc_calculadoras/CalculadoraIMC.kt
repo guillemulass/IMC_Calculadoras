@@ -1,5 +1,6 @@
 package com.gmulbat1301.imc_calculadoras
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -24,6 +25,13 @@ class CalculadoraIMC : AppCompatActivity() {
     private lateinit var txtCm : TextView
     private lateinit var btnCalc : Button
 
+    lateinit var btnMujer : Button
+    lateinit var btnHombre : Button
+    lateinit var sexo : String
+    lateinit var IMCaMostrar : String
+    lateinit var btnSalir : Button
+
+
     private var textoPeso = 60
     private var textoEdad = 20
 
@@ -45,6 +53,12 @@ class CalculadoraIMC : AppCompatActivity() {
         txtEdad = findViewById(R.id.stringedad)
 
         btnCalc= findViewById(R.id.btn_Calc)
+        btnMujer = findViewById(R.id.btn_Mujer)
+        btnHombre = findViewById(R.id.btn_Hombre)
+        //
+        btnSalir = findViewById(R.id.btn_Salir)
+        //
+        sexo = ""
 
 
         btnAddPeso = (findViewById(R.id.sumar_peso))
@@ -63,6 +77,10 @@ class CalculadoraIMC : AppCompatActivity() {
         btnSubsPeso.setOnClickListener{ updatetxtPeso("-") }
         btnAddEdad.setOnClickListener{ updatetxtEdad("+") }
         btnSubsEdad.setOnClickListener{ updatetxtEdad("-") }
+
+        btnMujer.setOnClickListener { sexo = "Mujer" }
+        btnHombre.setOnClickListener { sexo = "Hombre" }
+        btnSalir.setOnClickListener { finish() }
 
     }
 
@@ -105,8 +123,17 @@ class CalculadoraIMC : AppCompatActivity() {
         val alturamedia = ((slider.values[0]/100) + (slider.values[1] /100))/2
         val IMC = (textoPeso / (alturamedia*alturamedia))
         val df = DecimalFormat("#.##")
-        val IMCaMostrar = df.format(IMC)
-        Toast.makeText(this, IMCaMostrar,Toast.LENGTH_LONG).show()
+        IMCaMostrar = df.format(IMC)
+        val accesoResultado = Intent(this, IMCResultado::class.java)
+        accesoResultado.putExtra("IMCaMostrar",IMCaMostrar)
+        if (sexo == "") {
+            Toast.makeText(this,"Debe introducir un sexo",Toast.LENGTH_LONG).show()
+            }
+        else {
+            accesoResultado.putExtra("sexo",sexo)
+            startActivity(accesoResultado)
+        }
+
     }
 }
 

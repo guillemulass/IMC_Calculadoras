@@ -16,4 +16,11 @@
     <string name="signo_restar_botones">-</string>
     <string name="valor_altura">20</string>
     <string name="edad">Edad</string>
+    <string name="salirIMC">Salir</string>
+    <string name="resultado">Resultado</string>
+    <string name="explicaci_n_de_resultado">Explicación de resultado</string>
+    <string name="pesomenos">PESO -</string>
+    <string name="pesomas">PESO +</string>
+    <string name="edadmenos">EDAD -</string>
+    <string name="edadmas">EDAD +</string>
 </resources>
