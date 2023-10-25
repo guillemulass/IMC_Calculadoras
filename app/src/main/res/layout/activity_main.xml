@@ -7,50 +7,44 @@
     tools:context=".MainActivity">
 
 
-
     <Button
-        android:id="@+id/CalculadoraIMC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculadoraimc"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/CalculadoraAlvaro"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:text="@string/calculadora_alvaro"
+        android:layout_marginTop="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
 
     <Button
         android:id="@+id/CalculadoraGuille"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
         android:text="@string/calculadora_guillermo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintStart_toStartOf="@+id/CalculadoraAlvaro"
+        app:layout_constraintEnd_toEndOf="@+id/CalculadoraAlvaro"
+        app:layout_constraintTop_toBottomOf="@+id/CalculadoraAlvaro" />
 
     <Button
-        android:id="@+id/CalculadoraAlvaro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/calculadoraalvaro"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        android:id="@+id/CalculadoraIMC"
+        android:layout_width="200sp"
+        android:layout_height="50sp"
+        android:text="@string/calculadora_imc"
+        app:layout_constraintStart_toStartOf="@+id/CalculadoraGuille"
+        app:layout_constraintEnd_toEndOf="@+id/CalculadoraGuille"
+        app:layout_constraintTop_toBottomOf="@+id/CalculadoraGuille"/>
+
 
     <Button
         android:id="@+id/Salir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/salir"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329" />
+        app:layout_constraintStart_toStartOf="@+id/CalculadoraIMC"
+        app:layout_constraintEnd_toEndOf="@+id/CalculadoraIMC"
+        app:layout_constraintTop_toBottomOf="@+id/CalculadoraIMC"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
