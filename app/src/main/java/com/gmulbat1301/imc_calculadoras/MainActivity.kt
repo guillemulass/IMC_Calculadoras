@@ -8,15 +8,13 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
 
     private lateinit var btnList : ArrayList<Button>
+    private lateinit var btnSalir : Button
 
-    lateinit var btnSalir : Button
     private val activityClasses = listOf(
         CalculadoraGuille::class.java,
         CalculadoraAlvaro::class.java,
         CalculadoraIMC::class.java
     )
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
