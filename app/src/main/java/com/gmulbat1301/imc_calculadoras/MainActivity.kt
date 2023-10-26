@@ -4,10 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
-
-    private lateinit var btnList : ArrayList<Button>
+    private lateinit var btnList : ArrayList<ImageButton>
     private lateinit var btnSalir : Button
 
     private val activityClasses = listOf(

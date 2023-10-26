@@ -1,8 +1,5 @@
 <resources>
     <string name="app_name">IMC_Calculadoras</string>
-    <string name="calculadora_guillermo">Calculadora Guillermo</string>
-    <string name="calculadoraimc">Calculadora de IMC</string>
-    <string name="calculadoraalvaro">Calculadora Álvaro</string>
     <string name="salir">Salir</string>
     <string name="hombres">Hombres</string>
     <string name="mujeres">Mujeres</string>
@@ -12,8 +9,6 @@
     <string name="calcular">Calcular</string>
     <string name="peso">Peso</string>
     <string name="valor_peso">60</string>
-    <string name="signo_sumar_botones">+</string>
-    <string name="signo_restar_botones">-</string>
     <string name="valor_altura">20</string>
     <string name="edad">Edad</string>
     <string name="salirIMC">Salir</string>
@@ -24,5 +19,24 @@
     <string name="edadmenos">EDAD -</string>
     <string name="edadmas">EDAD +</string>
     <string name="textoInicioact4">Actividad 4 : Calculadora IMC</string>
-    <string name="hecho_por_lvaro_castilla_y_guillermo_mulas">Hecho por Álvaro Castilla y Guillermo Mulas</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>qw
+    <string name="sumar">+</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="restar">-</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="dividor">/</string>
+    <string name="ce">CE</string>
+    <string name="igual">=</string>
+    <string name="multiplicar">*</string>
+    <string name="_0">0</string>
+    <string name="salircalcalvaro">SALIR</string>
+    <string name="c">C</string>
+    <string name="punto">.</string>
+    <string name="calculadora">Calculadora</string>
 </resources>
