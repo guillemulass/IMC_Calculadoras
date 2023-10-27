@@ -1,13 +1,12 @@
 package com.gmulbat1301.imc_calculadoras
 
-import CalculoÁlvaro
+import CalculoAlvaro
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import kotlin.system.exitProcess
 
 
 /**
@@ -25,7 +24,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
     private lateinit var btnCalc: Button
     private lateinit var btnCE: Button
     private lateinit var buttonC: Button
-    private lateinit var calc: CalculoÁlvaro
+    private lateinit var calc: CalculoAlvaro
     private lateinit var btn_salir: Button
     private lateinit var btn_punto: Button
     private lateinit var textopantalla: TextView
@@ -38,7 +37,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
     private var numero1introducido: Boolean = false
     private var numero2introducido: Boolean = false
     private var reset: Boolean = false
-    private var puntoAñadido = false
+    private var puntoAnadido = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,7 +49,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
          * @class Calculo()
          * inicializa la clase Calculo en un objeto
          */
-        calc = CalculoÁlvaro()
+        calc = CalculoAlvaro()
 
         //inicializa una variable string del texto de la pantalla
         pantallaactual = ""
@@ -75,7 +74,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
     /**
      *  Inicializa listeners de botones (operador y número)
      */
-    fun initListeners() {
+    private fun initListeners() {
         //crea un setOnClickListener de cada botón que enlaza a la función botonClickado()
         for (i in 0 until listaNumeros.size) {
             listaNumeros[i].setOnClickListener { botonClikado(i) }
@@ -91,7 +90,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
         btnCalc.setOnClickListener { btnCalc() }
         btn_salir.setOnClickListener { finish() }
         buttonC.setOnClickListener { btnC() }
-        btn_punto.setOnClickListener { añadirPunto() }
+        btn_punto.setOnClickListener { anadirPunto() }
     }
 
     /**
@@ -174,7 +173,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
             pantallaactual = ""
             textopantalla.setText(pantallaactual)
         }
-        puntoAñadido = false
+        puntoAnadido = false
     }
 
     /**
@@ -196,7 +195,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
         }
         numero1introducido = false
         numero2introducido = false
-        puntoAñadido = false
+        puntoAnadido = false
     }
 
     /**
@@ -223,7 +222,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
      * Función para mostrar un mensaje de error.
      * @param msj -> variable que contiene el mensaje de error a mostrar
      */
-    fun mensajeError(msj: String) {
+    private fun mensajeError(msj: String) {
         Toast.makeText(this, msj, Toast.LENGTH_SHORT).show()
     }
 
@@ -234,21 +233,25 @@ class CalculadoraAlvaro : AppCompatActivity() {
     fun btnC() {
         // si no hay un resultado en pantalla se borra el dígito
         if (calc.result == 0.0) {
-            //si la pantalla
+            //controla cuando se intenta borrar y la pantalla es igual al operador pero no está vacía
             if (pantallaactual == calc.operador && pantallaactual.isNotBlank()) {
                 pantallaactual = calc.num1.toString()
                 calc.operador = ""
                 numero1introducido = false
-                puntoAñadido = false
+                puntoAnadido = false
                 calc.num1 = 0.0
             }
+            //controla cuando la pantalla esta vacía
             if (pantallaactual == "") {
+                //controla cuando la pantalla esta vacía pero se ha introducido ya el primer numero
                 if (numero1introducido) {
                     pantallaactual = calc.operador
                     textopantalla.text = pantallaactual
+                    //se intenta borrar estando la pantalla vacía (genera error)
                 } else {
                     mensajeError("No se puede borrar un número vacío.")
                 }
+                // la pantalla no está vacía. se borra último dígito.
             } else {
                 pantallaactual = pantallaactual.substring(0, pantallaactual.length - 1)
                 textopantalla.setText(pantallaactual)
@@ -256,16 +259,18 @@ class CalculadoraAlvaro : AppCompatActivity() {
             // Si hay un resultado en pantalla no se puede borrar
         } else {
             mensajeError("No se puede borrar un resultado.")
-            puntoAñadido = true
+            puntoAnadido = true
         }
     }
 
-
-    fun añadirPunto() {
-        if (!puntoAñadido) {
+    /**
+     * Función para añadir punto decimal.
+     */
+    private fun anadirPunto() {
+        if (!puntoAnadido) {
             pantallaactual += "."
             textopantalla.text = pantallaactual
-            puntoAñadido = true
+            puntoAnadido = true
         }
     }
 }

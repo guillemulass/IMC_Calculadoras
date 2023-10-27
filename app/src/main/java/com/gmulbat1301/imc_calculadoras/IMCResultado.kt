@@ -29,8 +29,10 @@ class IMCResultado : AppCompatActivity() {
         btnSalir.setOnClickListener { finish() }
     }
 
-    // Para acceder a los resultados del calculo del IMC, que se calcula en la actividad CalculadoraIMC
-    // llamamos a las variables con esta funcion
+    /**
+     *  Para acceder a los resultados del calculo del IMC, que se calcula en la actividad CalculadoraIMC
+     *  llamamos a las variables con esta funcion
+     */
     private fun recuperarVariables() {
         val intent = intent
         if (intent.hasExtra("IMCaMostrar")) {
@@ -41,7 +43,9 @@ class IMCResultado : AppCompatActivity() {
         }
     }
 
-    // Inicializamos las variables de los componentes que vamos a usar
+    /**
+     *  Inicializamos las variables de los componentes que vamos a usar
+     */
     private fun initComponents() {
         textviewIMC = findViewById(R.id.txtIMC)
         textviewSexo = findViewById(R.id.txtsexo)
@@ -51,7 +55,9 @@ class IMCResultado : AppCompatActivity() {
     }
 
 
-    // Devolvemos los resultados del calculo de IMC con su explicacion correspondiente
+    /**
+     *     Devolvemos los resultados del calculo de IMC con su explicacion correspondiente
+     */
     @SuppressLint("SetTextI18n")
     fun crearExplicacion(){
         // Estas variables no dependen de otras, por lo que se asignan directamente

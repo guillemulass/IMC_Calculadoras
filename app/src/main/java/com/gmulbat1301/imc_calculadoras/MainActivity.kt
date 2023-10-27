@@ -26,7 +26,9 @@ class MainActivity : AppCompatActivity() {
         initListeners()
     }
 
-    // Inicializamos las variables de los componentes que vamos a usar
+    /**
+     * Inicializamos las variables de los componentes que vamos a usar
+     */
     private fun initComponents(){
         btnSalir = findViewById(R.id.Salir)
         btnList = ArrayList()
@@ -35,13 +37,15 @@ class MainActivity : AppCompatActivity() {
         btnList.add(findViewById(R.id.CalculadoraIMC))
     }
 
-    // Inicializamoslos eventos y las funciones de los componentes
+    /**
+     * Inicializamos los eventos y las funciones de los componentes
+     */
     private fun initListeners(){
         for (i in 0..<btnList.count()){
             btnList[i].setOnClickListener{ btnClicked(i) }
         }
 
-        btnSalir.setOnClickListener { System.exit(0) }
+        btnSalir.setOnClickListener { finishAndRemoveTask() }
     }
 
 

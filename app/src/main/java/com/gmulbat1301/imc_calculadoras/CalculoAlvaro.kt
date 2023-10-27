@@ -6,9 +6,9 @@
 /**
  * Clase para el manejo del cálculo
  */
-class CalculoÁlvaro {
-    //variables de numeros, resultado y operador.
+class CalculoAlvaro {
 
+    //variables de numeros, resultado y operador.
     var num1 = 0.0
     var num2 = 0.0
     var result = 0.0
@@ -17,7 +17,10 @@ class CalculoÁlvaro {
     //variable para almacenar la última operación ejecutada.
     lateinit var historial : String
 
-    //función que ejecuta diferentes funciones de operaciones dependiendo del operador pulsado
+    /**
+     * Función que ejecuta diferentes funciones de operaciones dependiendo del operador pulsado.
+     * @return result -> devuelve el resultado de la operación que se realice.
+     */
     fun toDoOp():Double {
         when (operador) {
             "+" -> this.result = sumar()
@@ -28,6 +31,10 @@ class CalculoÁlvaro {
         return this.result
     }
 
+
+    /**
+     * Funciones para hacer las operaciones correspondientes
+     */
     fun sumar():Double {
         return num1 + num2
     }
@@ -41,7 +48,10 @@ class CalculoÁlvaro {
         return num1 / num2
     }
 
-    //función para guardar última operación en un string.
+    /**
+     * Función para guardar última operación en un string.
+     * @return historial -> devuelve la última operación realizada.
+     */
     fun setNumClicked():String {
         historial = "${num1} ${operador} ${num2} = ${(toDoOp())}"
         return historial
