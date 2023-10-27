@@ -35,16 +35,16 @@ class CalculoAlvaro {
     /**
      * Funciones para hacer las operaciones correspondientes
      */
-    fun sumar():Double {
+    private fun sumar():Double {
         return num1 + num2
     }
-    fun restar():Double {
+    private fun restar():Double {
         return num1 - num2
     }
-    fun multiplicar():Double {
+    private fun multiplicar():Double {
         return num1 * num2
     }
-    fun dividir():Double {
+    private fun dividir():Double {
         return num1 / num2
     }
 
@@ -53,7 +53,7 @@ class CalculoAlvaro {
      * @return historial -> devuelve la última operación realizada.
      */
     fun setNumClicked():String {
-        historial = "${num1} ${operador} ${num2} = ${(toDoOp())}"
+        historial = "$num1 $operador $num2 = ${(toDoOp())}"
         return historial
     }
 

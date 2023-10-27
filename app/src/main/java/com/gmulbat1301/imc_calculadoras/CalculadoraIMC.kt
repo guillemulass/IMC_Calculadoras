@@ -87,7 +87,7 @@ class CalculadoraIMC : AppCompatActivity() {
         btnCalc.setOnClickListener {
             btnCalc()
         }
-        slider.addOnChangeListener { slider, value, fromUser ->
+        slider.addOnChangeListener { slider, _, _ ->
             val valueText = String.format("%.1f - %.1f cm", slider.values[0], slider.values[1])
             txtCm.text = valueText
         }
@@ -143,7 +143,7 @@ class CalculadoraIMC : AppCompatActivity() {
     /**
      * Función diseñada para calcular el valor de IMC. Abre nuevo activity y muestra resultados.
      */
-    fun btnCalc() {
+    private fun btnCalc() {
         //recupera altura media
         val alturamedia = ((slider.values[0]/100) + (slider.values[1] /100))/2
         //hace operación IMC
