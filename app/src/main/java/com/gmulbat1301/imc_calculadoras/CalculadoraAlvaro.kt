@@ -72,6 +72,9 @@ class CalculadoraAlvaro : AppCompatActivity() {
 
     }
 
+    /**
+     *  Inicializa listeners de botones (operador y número)
+     */
     fun initListeners() {
         //crea un setOnClickListener de cada botón que enlaza a la función botonClickado()
         for (i in 0 until listaNumeros.size) {
@@ -91,7 +94,9 @@ class CalculadoraAlvaro : AppCompatActivity() {
         btn_punto.setOnClickListener { añadirPunto() }
     }
 
-    //función que ejecuta cada botón de cada numero
+    /**
+     *   Función que ejecuta cada botón de cada numero
+     */
     private fun crearNumeros() {
         //lista de todos los botones juntos
         listaNumeros = mutableListOf()
@@ -108,7 +113,9 @@ class CalculadoraAlvaro : AppCompatActivity() {
         listaNumeros.add(findViewById(R.id.button9))
     }
 
-    //función que ejecuta cada botón de cada operador
+    /**
+     *    Función que ejecuta cada botón de cada operador
+     */
     private fun crearOperadores() {
         //lista de todos los botones juntos
         listaOps = mutableListOf()
@@ -119,7 +126,10 @@ class CalculadoraAlvaro : AppCompatActivity() {
         listaOps.add(findViewById(R.id.buttondividir))
     }
 
-    //función que ejecuta cada número clickado
+    /**
+     *    Función que ejecuta cada número clickado
+     * @param num -> variable para reconocer cada botón clickado
+     */
     private fun botonClikado(num: Int) {
         // significa que la operación anterior ya se ha realizado y se inicia una nueva operación.
         if (numero1introducido && numero2introducido) {
@@ -135,7 +145,10 @@ class CalculadoraAlvaro : AppCompatActivity() {
 
     }
 
-    //función que se ejecuta cuando se clicka un operador
+    /**
+     * Función que se ejecuta cuando se clicka un operador
+     *  @param operator -> variable que almacena operador pulsado
+     */
     private fun botonOperador(operator: String) {
         // significa que la operación anterior ya se ha realizado y se inicia una operación con el resultado.
         if (numero1introducido && numero2introducido) {
@@ -164,7 +177,9 @@ class CalculadoraAlvaro : AppCompatActivity() {
         puntoAñadido = false
     }
 
-    //función que se ejecuta cuando se clicka el botón CE
+    /**
+     * Función que se ejecuta cuando se clicka el botón CE
+     */
     private fun btnCE() {
         calc.num1 = 0.0
         calc.num2 = 0.0
@@ -184,7 +199,9 @@ class CalculadoraAlvaro : AppCompatActivity() {
         puntoAñadido = false
     }
 
-    //función que se ejecuta cuando se clicka el botón de calcular.
+    /**
+     * Función que se ejecuta cuando se clicka el botón de calcular.
+     */
     private fun btnCalc() {
         if (pantallaactual != "" && numero1introducido) {
             calc.num2 = pantallaactual.toDouble()
@@ -202,15 +219,22 @@ class CalculadoraAlvaro : AppCompatActivity() {
 
     }
 
+    /**
+     * Función para mostrar un mensaje de error.
+     * @param msj -> variable que contiene el mensaje de error a mostrar
+     */
     fun mensajeError(msj: String) {
         Toast.makeText(this, msj, Toast.LENGTH_SHORT).show()
     }
 
-    //función que se ejecuta cuando se clicka el botón C (borrado de 1 solo dígito).
+    /**
+     * Función que se ejecuta cuando se clicka el botón C (borrado de 1 solo dígito).
+     */
     @SuppressLint("SetTextI18n")
     fun btnC() {
         // si no hay un resultado en pantalla se borra el dígito
         if (calc.result == 0.0) {
+            //si la pantalla
             if (pantallaactual == calc.operador && pantallaactual.isNotBlank()) {
                 pantallaactual = calc.num1.toString()
                 calc.operador = ""
@@ -229,6 +253,7 @@ class CalculadoraAlvaro : AppCompatActivity() {
                 pantallaactual = pantallaactual.substring(0, pantallaactual.length - 1)
                 textopantalla.setText(pantallaactual)
             }
+            // Si hay un resultado en pantalla no se puede borrar
         } else {
             mensajeError("No se puede borrar un resultado.")
             puntoAñadido = true
