@@ -14,10 +14,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@id/pantallatexto"
         tools:ignore="NotSibling">
-
-
-
-
         <TextView
             android:id="@+id/textocalc"
             android:layout_width="match_parent"
@@ -27,7 +23,7 @@
             android:textStyle="bold"
             android:textSize="35dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="cursive"
+            android:fontFamily="casual"
             android:textColor="@android:color/black"
             />
     </LinearLayout>
@@ -114,7 +110,7 @@
             android:id="@+id/buttonsumar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_orange_light"
+            android:backgroundTint="@color/gris"
             android:text="@string/sumar"/>
 
     </LinearLayout>
@@ -150,7 +146,7 @@
             android:id="@+id/buttonrestar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_orange_light"
+            android:backgroundTint="@color/gris"
             android:text="@string/restar"/>
 
     </LinearLayout>
@@ -187,7 +183,7 @@
             android:id="@+id/buttondividir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_orange_light"
+            android:backgroundTint="@color/gris"
             android:text="@string/dividor"/>
 
     </LinearLayout>
@@ -216,12 +212,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/igual"
-            android:backgroundTint="@android:color/holo_green_dark"/>
+            android:textColor="@color/gris"
+            android:backgroundTint="#D5CFCE"/>
         <Button
             android:id="@+id/buttonmult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_orange_light"
+            android:backgroundTint="@color/gris"
             android:text="@string/multiplicar"/>
 
     </LinearLayout>
@@ -243,7 +240,7 @@
             android:id="@+id/buttonpunto"
             android:layout_width="175dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_orange_light"
+            android:backgroundTint="@color/gris"
             android:text="@string/punto"/>
 
     </LinearLayout>
