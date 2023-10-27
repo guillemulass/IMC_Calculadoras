@@ -8,18 +8,15 @@ import android.widget.ImageView
 import android.widget.TextView
 
 class IMCResultado : AppCompatActivity() {
-    var variableIMC : String? = ""
-    var variablesexo : String? = ""
+    private var variableIMC : String? = ""
+    private var variablesexo : String? = ""
 
-    lateinit var textviewIMC: TextView
-    lateinit var textviewSexo: TextView
-    lateinit var textviewExplicacion: TextView
-    lateinit var btnSalir : Button
+    private lateinit var textviewIMC: TextView
+    private lateinit var textviewSexo: TextView
+    private lateinit var textviewExplicacion: TextView
+    private lateinit var btnSalir : Button
 
-    lateinit var imagen : ImageView
-
-
-
+    private lateinit var imagen : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +27,11 @@ class IMCResultado : AppCompatActivity() {
         initComponents()
         crearExplicacion()
         btnSalir.setOnClickListener { finish() }
-
     }
-    fun recuperarVariables() {
+
+    // Para acceder a los resultados del calculo del IMC, que se calcula en la actividad CalculadoraIMC
+    // llamamos a las variables con esta funcion
+    private fun recuperarVariables() {
         val intent = intent
         if (intent.hasExtra("IMCaMostrar")) {
             variableIMC = intent.getStringExtra("IMCaMostrar")
@@ -41,20 +40,26 @@ class IMCResultado : AppCompatActivity() {
             variablesexo = intent.getStringExtra("sexo")
         }
     }
-    fun initComponents() {
+
+    // Inicializamos las variables de los componentes que vamos a usar
+    private fun initComponents() {
         textviewIMC = findViewById(R.id.txtIMC)
         textviewSexo = findViewById(R.id.txtsexo)
         textviewExplicacion = findViewById(R.id.txtexplicacion)
-        btnSalir = findViewById<Button?>(R.id.btn_SalirResultado)
+        btnSalir = findViewById(R.id.btn_SalirResultado)
         imagen = findViewById(R.id.imagen)
     }
 
 
+    // Devolvemos los resultados del calculo de IMC con su explicacion correspondiente
     @SuppressLint("SetTextI18n")
     fun crearExplicacion(){
+        // Estas variables no dependen de otras, por lo que se asignan directamente
         textviewIMC.text = "IMC: $variableIMC"
         textviewSexo.text = "Sexo: $variablesexo"
+        // Primero diferenciamos entre Hombre y Mujer
         if (variablesexo == "Hombre") {
+            // Ahora creamos diferentes explicaciones dependiendo de los rangos del IMC
             if (variableIMC?.toFloat()!! < 20f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
@@ -92,7 +97,9 @@ class IMCResultado : AppCompatActivity() {
                 imagen.setImageResource(R.drawable.imc5)
             }
         }
+
         if (variablesexo == "Mujer") {
+            // Igual que en hombre, diferenciamos las explicacions segun el resultado de IMC y los rangos de este
             if (variableIMC?.toFloat()!! < 20f) {
                 textviewExplicacion.text = """
                 Tu resultado de IMC es de $variableIMC.
