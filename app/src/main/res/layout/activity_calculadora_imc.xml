@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#dddddd"
+    android:background="@color/background_text"
     tools:context=".CalculadoraIMC">
 
 
@@ -15,12 +15,18 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
-        android:backgroundTint="#3A4750"
+        android:backgroundTint="@color/Teal"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/btn_Hombre"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:backgroundTint="@color/Teal"
+            tools:ignore="SpeakableTextPresentCheck" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,25 +38,20 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/signomasc"
                 android:contentDescription="@string/hombres" />
-
-
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal">
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="140dp"
                 android:text="@string/hombres"
                 android:textStyle="bold"
-                android:textColor="#EEEEEE"
+                android:textColor="@color/background_text"
                 android:textSize="20sp"/>
         </LinearLayout>
-
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -61,9 +62,16 @@
         android:layout_marginEnd="30dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        android:backgroundTint="#3A4750"
+        android:backgroundTint="@color/Teal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_Mujer"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:backgroundTint="#3A4750"
+            tools:ignore="SpeakableTextPresentCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,7 +99,7 @@
             android:layout_marginTop="140dp"
             android:text="@string/mujeres"
             android:textStyle="bold"
-            android:textColor="#EEEEEE"
+            android:textColor="@color/background_text"
             android:textSize="20sp"/>
     </LinearLayout>
 
@@ -106,7 +114,7 @@
         android:layout_marginEnd="30dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        android:backgroundTint="#3A4750"
+        android:backgroundTint="@color/Teal"
         app:layout_constraintTop_toBottomOf="@+id/cardview1"
         app:layout_constraintStart_toStartOf="@id/cardview1">
         <LinearLayout
@@ -120,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/altura"
                 android:textStyle="bold"
-                android:textColor="#EEEEEE"
+                android:textColor="@color/background_text"
                 android:textSize="20sp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"/>
@@ -131,7 +139,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/_120_0_200_0"
                 android:textStyle="bold"
-                android:textColor="#EEEEEE"
+                android:textColor="@color/background_text"
                 android:textSize="30sp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="5dp"
@@ -143,7 +151,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                tools:ignore="SpeakableTextPresentCheck" />
+                tools:ignore="SpeakableTextPresentCheck"
+                app:thumbColor="#EEE9DA"
+                app:trackColorActive="#6096B4"
+                app:trackColorInactive="#BDCDD6"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -151,7 +163,7 @@
         android:id="@+id/cardview4"
         android:layout_width="175dp"
         android:layout_height="175dp"
-        android:backgroundTint="#3A4750"
+        android:backgroundTint="@color/Teal"
         android:layout_marginTop="30dp"
         android:layout_marginStart="-1dp"
         app:cardCornerRadius="8dp"
@@ -161,43 +173,70 @@
         >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/signomasc"
-                android:contentDescription="@string/hombres" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="140dp"
-                android:text="@string/hombres"
+                android:text="@string/peso"
                 android:textStyle="bold"
-                android:textColor="#EEEEEE"
-                android:textSize="20sp"/>
+                android:textColor="@color/background_text"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/stringpeso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/valor_peso"
+                android:textStyle="bold"
+                android:textColor="@color/background_text"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/restar_peso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_remove"
+                    app:backgroundTint="#EEE9DA"
+                    android:layout_marginEnd="15dp"
+                    android:contentDescription="@string/pesomenos"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/sumar_peso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_add"
+                    app:backgroundTint="#EEE9DA"
+                    android:layout_marginStart="15dp"
+                    android:contentDescription="@string/pesomas" />
+
+
+            </LinearLayout>
+
+
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview5"
         android:layout_width="175dp"
         android:layout_height="175dp"
-        android:backgroundTint="#3A4750"
+        android:backgroundTint="@color/Teal"
         android:layout_marginTop="30dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
@@ -206,36 +245,64 @@
         >
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
-
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_marginTop="10dp"
-                android:src="@drawable/signomasc"
-                android:contentDescription="@string/hombres" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center_horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="140dp"
-                android:text="@string/hombres"
+                android:text="@string/edad"
                 android:textStyle="bold"
-                android:textColor="#EEEEEE"
-                android:textSize="20sp"/>
+                android:textColor="@color/background_text"
+                android:textSize="20sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/stringedad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/valor_altura"
+                android:textStyle="bold"
+                android:textColor="@color/background_text"
+                android:textSize="30sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="15dp">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/restar_edad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_remove"
+                    app:backgroundTint="#EEE9DA"
+                    android:layout_marginEnd="15dp"
+                    android:contentDescription="@string/edadmenos"
+                    />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/sumar_edad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_add"
+                    app:backgroundTint="#EEE9DA"
+                    android:layout_marginStart="15dp"
+                    android:contentDescription="@string/edadmas"
+                    />
+
+
+            </LinearLayout>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutBtnCalc"
         android:layout_width="wrap_content"
@@ -243,7 +310,7 @@
         app:layout_constraintTop_toBottomOf="@id/cardview4"
         app:layout_constraintStart_toStartOf="@id/cardview4"
         android:background="@drawable/btn_calc"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="11dp"
         >
 
         <Button
@@ -253,14 +320,32 @@
             android:text="@string/calcular"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/background_text"
+            android:backgroundTint="@color/Teal"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutBtnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutBtnCalc"
+        app:layout_constraintStart_toStartOf="@id/layoutBtnCalc"
+        android:background="@drawable/btn_calc"
+        android:layout_marginTop="2dp"
+        >
+
+        <Button
+            android:id="@+id/btn_Salir"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="@string/salirIMC"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:backgroundTint="#3A4750"
             tools:ignore="MissingConstraints" />
 
 
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
