@@ -1,11 +1,11 @@
+package com.gmulbat1301.imc_calculadoras
+
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import com.gmulbat1301.imc_calculadoras.CalculoGuille
-import com.gmulbat1301.imc_calculadoras.R
 
 class CalculadoraGuille : AppCompatActivity() {
 
