@@ -17,6 +17,8 @@ class CalculadoraGuille : AppCompatActivity() {
     private lateinit var equalsButton: Button
     private lateinit var decimalButton: Button
     private lateinit var backspaceButton: Button
+    private lateinit var btn_salir: Button
+
 
     private lateinit var numberButtons: Array<Button>
     private lateinit var operationButtons: Array<Button>
@@ -39,6 +41,7 @@ class CalculadoraGuille : AppCompatActivity() {
         equalsButton = findViewById(R.id.buttonEquals)
         decimalButton = findViewById(R.id.buttonDecimal)
         backspaceButton = findViewById(R.id.buttonBackspace)
+        btn_salir = findViewById(R.id.buttonOut)
 
 
         // Manejar clic en números del 0 al 9
@@ -98,6 +101,8 @@ class CalculadoraGuille : AppCompatActivity() {
             calculo.deleteLastCharacter()
             updateResult()
         }
+
+        btn_salir.setOnClickListener { finish() }
     }
 
 

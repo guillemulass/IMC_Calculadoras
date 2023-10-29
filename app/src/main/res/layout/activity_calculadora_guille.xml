@@ -289,10 +289,10 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/buttonOut"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:id="@+id/interfaz_inicial_guille"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/salircalcalvaro"
