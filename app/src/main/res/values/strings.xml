@@ -39,4 +39,26 @@
     <string name="c">C</string>
     <string name="punto">.</string>
     <string name="calculadora">Calculadora</string>
+    <string name="calculadora_Guille_1">1</string>
+    <string name="calculadora_Guille_2">2</string>
+    <string name="calculadora_Guille_3">3</string>
+    <string name="calculadora_Guille_divSimbol">/</string>
+    <string name="calculadora_Guille_4">4</string>
+    <string name="calculadora_Guille_5">5</string>
+    <string name="calculadora_Guille_6">6</string>
+    <string name="calculadora_Guille_multSimbol">x</string>
+    <string name="calculadora_Guille_7">7</string>
+    <string name="calculadora_Guille_8">8</string>
+    <string name="calculadora_Guille_9">9</string>
+    <string name="calculadora_Guille_substSimbol">-</string>
+    <string name="calculadora_Guillece">CE</string>
+    <string name="calculadora_Guille_0">0</string>
+    <string name="calculadora_Guille_eqSimbol">=</string>
+    <string name="calculadora_Guille_addSimbol">+</string>
+    <string name="calculadora_GuilleinitialStr">______</string>
+    <string name="calculadora_GuilletxtPanel1">%1$s</string>
+    <string name="calculadora_GuilletxtPanel2">%1$s</string>
+    <string name="calculadora_GuilleTitulo">Calculadora Guillermo</string>
+    <string name="calculadora_GuilleDecimal">.</string>
+    <string name="calculadora_GuilleBackspace"><![CDATA[<]]></string>
 </resources>
